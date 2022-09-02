@@ -10,12 +10,7 @@ __pkg = Distribution.from_name(__package__)
 __version__ = __pkg.version
 
 
-DISPLAY_TITLE = r"""
-ChRIS Plugin Template Title
-"""
-
-
-parser = ArgumentParser(description='cli description',
+parser = ArgumentParser(description='Average edge length about each vertex of a surface mesh.',
                         formatter_class=ArgumentDefaultsHelpFormatter)
 parser.add_argument('-n', '--name', default='foo',
                     help='argument which sets example output file name')
@@ -26,15 +21,13 @@ parser.add_argument('-V', '--version', action='version',
 # documentation: https://fnndsc.github.io/chris_plugin/chris_plugin.html#chris_plugin
 @chris_plugin(
     parser=parser,
-    title='My ChRIS plugin',
+    title='Average Edge Length',
     category='',                 # ref. https://chrisstore.co/plugins
     min_memory_limit='100Mi',    # supported units: Mi, Gi
     min_cpu_limit='1000m',       # millicores, e.g. "1000m" = 1 CPU core
     min_gpu_limit=0              # set min_gpu_limit=1 to enable GPU
 )
 def main(options: Namespace, inputdir: Path, outputdir: Path):
-    print(DISPLAY_TITLE)
-
     output_file = outputdir / f'{options.name}.txt'
     output_file.write_text('did nothing successfully!')
 

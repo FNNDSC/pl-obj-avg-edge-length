@@ -1,18 +1,18 @@
 from setuptools import setup
 
 setup(
-    name='chris-plugin-template',
+    name='obj-avg-edge-length',
     version='1.0.0',
-    description='A ChRIS DS plugin template',
-    author='FNNDSC',
-    author_email='dev@babyMRI.org',
-    url='https://github.com/FNNDSC/python-chrisapp-template',
-    py_modules=['app'],
+    description='Average edge length about each vertex of a surface mesh.',
+    author='Jennings Zhang',
+    author_email='Jennings.Zhang@childrens.harvard.edu',
+    url='https://github.com/FNNDSC/pl-obj-avg-edge-length',
+    py_modules=['edgy'],
     install_requires=['chris_plugin'],
     license='MIT',
     entry_points={
         'console_scripts': [
-            'commandname = app:main'
+            'edgy = edgy:main'
         ]
     },
     classifiers=[
